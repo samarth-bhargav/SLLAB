@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<body style="background-color:#00001b;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+div{
+  background-image:url('static/stars.jpeg')
+}
+.btn {
+  background-color: #00006b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity:0.8;
+}
+
+.center{
+  display:block;
+  margin-left:175px;
+  margin-right:auto;
+  width:101%;
+}
+
+
+</style>
+</head>
+
+<!-- Navbar (sit on top) -->
+<header class="w3-top">
+  <header class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>SLLAB</b> Coverage</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <header class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Coverage</a>
+      <a href="#contact" class="w3-bar-item w3-button">Get Prediction</a>
+    </header>
+  </header>
+</header>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/static/background.jpg" alt="background" width="1500" height="800">
+  <header class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>SLLAB</b></span> <span class="w3-hide-small w3-text-light-grey">Projects</span></h1>
+  </header>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="color:white; text-align:center;font-size:45px;font-weight:bold;font-family:Avenir;background-image:url('static/stars.jpeg')">Our Coverage</h2>
+  </div>
+
+  <div class="w3-col l3 m6 w3-margin-bottom" style="width:1000px;">
+    <div class="">
+
+      <img src="/static/location.png" alt="Map" class="center"/>
+
+      <p style = "color:white;text-align:center;font-family:'Arial';font-weight:bold;font-size: 24px;margin-left:375px;">
+        As of now, we only cover the Miami region due to its abundance of light pollution and our lack of resources.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Our Mission Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="color:white;font-size:48px;font-weight:bold;font-family:Avenir;text-align:center;background-image:url('static/stars.jpeg')">Our Mission</h3>
+    <p style = "color:white;text-align:center; font-family:'Arial';font-weight:bold;font-size: 24px;background-image:url('static/stars.jpeg')">
+      Our mission is to revolutionize the fight against light pollution by developing a highly accurate regression-based <br>
+      machine learning model that accurately predicts light pollution levels and highlights the impact on human health, <br> wildlife, and ecosystems.
+      We aim to inspire action and raise awareness, empowering communities to reduce light pollution for future generations. <br>
+
+    </p>
+  </div>
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="color:white;font-weight:bold;font-family:Avenir">Get Prediction </h3>
+    <p style="color:white;font-weight:bold;font-family:Avenir">Submit the data of the relevant setting.</p>
+    <form class = "grid" action = "/result" method = "POST">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Longitude" required name="Longitude">
+        <input class="w3-input w3-border" type="text" placeholder="Latitude" required name="Latitude">
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Year" required name="Year">
+          <button class="btn" type="submit" style="color:#CCCCCC">
+         <i class="fa fa-paper-plane"></i> GO!
+      </button>
+    </form>
+  </div>
+
+<!-- Image of location/map -->
+<div class="w3-container">
+  <!--<img src="/w3images/map.jpg" class="w3-image" style="width:100%">-->
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <!--<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+</footer>
+
+
+
+</body>
+</html>

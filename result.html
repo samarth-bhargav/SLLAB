@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        #results{
+            border-radius: 25px;
+          background: #00001b;
+          padding: 20px;
+          width: 800px;
+          height: 250px;
+          border:1px solid #FFFFFF;
+          margin:0 auto;
+        }
+        #about{
+            border-radius: 25px;
+          background: #00001b;
+          padding: 20px;
+          width: 800px;
+          height: 250px;
+          border:1px solid #FFFFFF;
+          margin:0 auto;
+        }
+        header{
+            background-image:url('static/stars.jpeg')
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="background-color:#00001b;">
+
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/static/background.jpg" alt="background" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>SLLAB</b></span> <span class="w3-hide-small w3-text-light-grey">Projects</span></h1>
+  </div>
+</header>
+
+<header>
+
+
+        {% if long %}
+            <h1 style="text-align:center;font-size:60px;color:white;font-weight:bold;font-family:Avenir">Data</h1>
+            <h2 id = "results" style="color:white;font-weight:bold;font-family:Avenir">
+                Inputted Longitude: {{long}}<br>
+                Inputted Latitude: {{lat}}<br>
+                Inputted Year: {{year}}<br>
+                Predicted nW/cm<sup>2</sup>: {{res}}
+            </h2>
+            <div id="myPlot" style="width:100%;max-width:700px;margin-left:auto;margin-right:auto;margin-top:50px;margin-bottom:50px;font-family:Avenir;font-weight:bold;border-radius: 25px;"></div>
+
+            <h1 style="text-align:center;font-size:60px;color:white;font-weight:bold;font-family:Avenir">About the Data</h1>
+            <h2 id = "about" style="color:white;font-weight:bold;font-family:Avenir">
+                   If the predicted value is greater than 28 nW/cm<sup>2</sup>, urgent/immediate action is required. If the value is between
+                15 and 28 nW/cm<sup>2</sup>, further action is desired but not pressing. A value below 15 nW/cm<sup>2</sup> is great.
+                </h2>
+
+
+
+            <script>
+                var xArray = {{xArray}}
+                var yArray = {{yArray}}
+
+                // Define Data
+                var data = [{
+                  x:xArray,
+                  y:yArray,
+                  mode:"markers"
+                }];
+
+                // Define Layout
+                var layout = {
+                  xaxis: {range: [2012, {{year}}], title: "Year"},
+                  yaxis: {range: [0, 50], title: "nW/cm<sup>2</sup>"},
+                  title: "Light Pollution Progression"
+                };
+
+                // Display using Plotly
+                Plotly.newPlot("myPlot", data, layout);
+            </script>
+        {% endif %}
+
+</header>
+</body>
+</html>
